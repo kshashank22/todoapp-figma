@@ -57,6 +57,7 @@ const TodoListItems = ({
         return (
           <li key={eachElement.id} className="todo-list-items-container">
             <input
+              id={eachElement.id}
               type="checkbox"
               className="checkboxStyling"
               onChange={() => updateCheckbox(eachElement)}
@@ -75,7 +76,9 @@ const TodoListItems = ({
                   />
                 </form>
               ) : (
-                <label className="contentStyling">{eachElement.title}</label>
+                <label htmlFor={eachElement.id} className="contentStyling">
+                  {eachElement.title}
+                </label>
               )}
               <>
                 <TodoButton

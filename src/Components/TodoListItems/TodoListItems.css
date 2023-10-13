@@ -5,7 +5,7 @@ ul {
   max-width: 375px;
   margin-top: 10px;
   margin-left: 10px;
-  max-height: 300px;
+  max-height: 520px;
   overflow-y: auto;
 }
 .todo-list-items-container {
@@ -20,6 +20,7 @@ ul {
   height: 20px;
   background-color: #006cff;
   color: #006cff;
+  accent-color: #006cff;
 }
 .contentBox {
   display: flex;
@@ -29,7 +30,8 @@ ul {
   border-bottom: 1px solid lightgray;
 }
 .contentStyling {
-  width: 271px;
+  width: 221px;
+  overflow-wrap: break-word;
   margin-left: 10px;
   font-family: "Arial";
   font-size: 18px;
@@ -60,7 +62,7 @@ ul {
   color: #006cff;
 }
 .editInputTodo {
-  width: 260px;
+  width: 225px;
   border: 1px solid lightgray;
   outline: none;
   background-color: transparent;
