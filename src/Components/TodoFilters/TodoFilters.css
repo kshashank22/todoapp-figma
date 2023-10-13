@@ -1,0 +1,15 @@
+.todo-filter {
+  display: flex;
+  justify-content: space-around;
+  font-family: "Arial";
+  font-size: 18px;
+  margin: 10px 0px 15px;
+}
+.todo-filter-button {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.todo-filter-input {
+  margin-left: 5px;
+  margin-right: 2px;
+}
