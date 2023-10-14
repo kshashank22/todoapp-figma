@@ -73,6 +73,7 @@ const TodoListItems = ({
                     type="text"
                     value={editedTodo}
                     onChange={(event) => setEditedTodo(event.target.value)}
+                    onBlur={onSaveEdit}
                     autoFocus
                   />
                 </form>
