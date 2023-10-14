@@ -3,13 +3,13 @@ import "./TodoFilters.css";
 
 const TodoFilters = ({ todoFilter, setTodoFilter }) => {
   return (
-    <div className="todo-filter">
+    <div className="todoFilter">
       <label>
         <input
           type="radio"
           value="All"
           name="todo"
-          className="todo-filter-input"
+          className="todoFilterInput"
           onChange={() => setTodoFilter("All")}
           checked={todoFilter === "All"}
         />
@@ -20,7 +20,7 @@ const TodoFilters = ({ todoFilter, setTodoFilter }) => {
           type="radio"
           value="Completed"
           name="todo"
-          className="todo-filter-input"
+          className="todoFilterInput"
           onChange={() => setTodoFilter("Completed")}
           checked={todoFilter === "Completed"}
         />
@@ -31,7 +31,7 @@ const TodoFilters = ({ todoFilter, setTodoFilter }) => {
           type="radio"
           value="Incomplete"
           name="todo"
-          className="todo-filter-input"
+          className="todoFilterInput"
           onChange={() => setTodoFilter("Incomplete")}
           checked={todoFilter === "Incomplete"}
         />

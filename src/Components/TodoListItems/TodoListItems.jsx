@@ -10,6 +10,7 @@ const TodoListItems = ({
   setEditedTodoId,
   editedTodo,
   editedTodoId,
+  time,
 }) => {
   const updatedText = (id) => {
     setEditedTodoId(id);
@@ -43,7 +44,7 @@ const TodoListItems = ({
     } else if (editedTodo.trim() !== "") {
       const updatedTodo = todoList.map((eachElement) =>
         eachElement.id === editedTodoId
-          ? { ...eachElement, title: editedTodo }
+          ? { ...eachElement, title: editedTodo, time: time }
           : eachElement
       );
       setTodoList(updatedTodo);
@@ -55,7 +56,7 @@ const TodoListItems = ({
     <ul>
       {todoFilterPage.map((eachElement) => {
         return (
-          <li key={eachElement.id} className="todo-list-items-container">
+          <li key={eachElement.id} className="todoListItemsContainer">
             <input
               id={eachElement.id}
               type="checkbox"
@@ -82,16 +83,16 @@ const TodoListItems = ({
               )}
               <>
                 <TodoButton
-                  className="todo-edit-buttons"
+                  className="todoEditButtons"
                   onclick={() => updatedText(eachElement.id)}
                   value={
-                    <i className="fa-regular fa-pen-to-square todo-icon-style"></i>
+                    <i className="fa-regular fa-pen-to-square todoIconStyle"></i>
                   }
                 />
                 <TodoButton
-                  className="todo-edit-buttons"
+                  className="todoEditButtons"
                   onclick={() => deleteTodoTask(eachElement)}
-                  value={<i className="fa-solid fa-trash todo-icon-style"></i>}
+                  value={<i className="fa-solid fa-trash todoIconStyle"></i>}
                 />
 
                 {eachElement.status ? (
@@ -99,6 +100,10 @@ const TodoListItems = ({
                 ) : (
                   <label className="circle inCompleteStatus"></label>
                 )}
+                <div>
+                  <i className="fa-regular fa-clock todoIconTime"></i>
+                  <i className="todoIconTime timeStyle">{eachElement.time}</i>
+                </div>
               </>
             </div>
           </li>

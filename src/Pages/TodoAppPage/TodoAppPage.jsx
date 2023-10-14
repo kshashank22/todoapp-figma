@@ -24,6 +24,14 @@ function TodoAppPage() {
     }
   }, [todoList]);
 
+  var time;
+  const date = new Date();
+  if (date.getMinutes().toString().length < 2) {
+    time = `${date.getHours()}:0${date.getMinutes()}`;
+  } else {
+    time = `${date.getHours()}:${date.getMinutes()}`;
+  }
+
   const addTodo = () => {
     setDisplay(true);
   };
@@ -62,14 +70,19 @@ function TodoAppPage() {
           />
         </div>
       </div>
-      {display && (
-        <TodoInput
-          setDisplay={setDisplay}
-          todoInput={todoInput}
-          setTodoInput={setTodoInput}
-          todoList={todoList}
-          setTodoList={setTodoList}
-        />
+      {display ? (
+        <div className="todoAppPageInputContainer">
+          <TodoInput
+            setDisplay={setDisplay}
+            todoInput={todoInput}
+            setTodoInput={setTodoInput}
+            todoList={todoList}
+            setTodoList={setTodoList}
+            time={time}
+          />
+        </div>
+      ) : (
+        ""
       )}
       {todoList.length > 0 && display === false && (
         <>
@@ -86,6 +99,7 @@ function TodoAppPage() {
             setEditedTodo={setEditedTodo}
             setEditedTodoId={setEditedTodoId}
             editedTodoId={editedTodoId}
+            time={time}
           />
           <div className="todoClearButtonContainer">
             <TodoButton

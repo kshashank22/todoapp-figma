@@ -9,6 +9,7 @@ const TodoInput = ({
   setTodoInput,
   todoList,
   setTodoList,
+  time,
 }) => {
   const cancelInput = () => {
     setTodoInput("");
@@ -26,7 +27,7 @@ const TodoInput = ({
     if (todoInput.trim() !== "") {
       setTodoList([
         ...todoList,
-        { id: uuidv4(), title: todoInput, status: false },
+        { id: uuidv4(), title: todoInput, status: false, time: time },
       ]);
       setTodoInput("");
     }
