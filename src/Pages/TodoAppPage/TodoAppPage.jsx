@@ -70,7 +70,7 @@ function TodoAppPage() {
           />
         </div>
       </div>
-      {display ? (
+      {display && (
         <div className="todoAppPageInputContainer">
           <TodoInput
             setDisplay={setDisplay}
@@ -81,8 +81,6 @@ function TodoAppPage() {
             time={time}
           />
         </div>
-      ) : (
-        ""
       )}
       {todoList.length > 0 && display === false && (
         <>
